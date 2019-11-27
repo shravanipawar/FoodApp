@@ -1,0 +1,213 @@
+/*-----------------------------------*/
+/* BASIC SETUP*/
+/*-----------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html,
+body{
+    background-color: #fff;
+    font-family: 'Lato','Arial',sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    
+}
+/*-----HEADINGS-----*/
+h1{
+    margin-top: 0;  
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 45px;
+    word-spacing:4px;
+    letter-spacing: 1px;
+    font-weight: 380;
+}
+
+h3{
+    font-weight:bold;
+    margin-top:60px;
+    text-transform: uppercase;
+}
+.navbar-brand{
+    padding: unset;
+}
+#brand-1{
+    color: #000;
+}
+#brand-2{
+    color: #F8A22F;
+}
+
+/*-----LINKS-------*/
+a:link,
+a:visited{
+    color: #888;
+    text-decoration: none;
+    padding-bottom: 1px;
+    transition: color 0.2s;
+}
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent; 
+}
+/*-----BUTTONS-----*/
+
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s,border 0.2s,color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #F8A22F;
+    border: 1px solid #F8A22F;
+    color: #fff;
+    margin-right: 15px;
+}
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #cf6d17;
+    color: #fff;
+}
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]{
+    border: 1px solid #cf6d17;
+}
+/*-----------------------------------*/
+/* HEADER*/
+/*-----------------------------------*/
+header{
+    background-color: rgba(243, 220, 220, 0.993);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;    
+}
+.hero-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+span{
+    color: #F8A22F;
+}
+h1{
+    font-size: 45px;
+    word-spacing:4px;
+    letter-spacing: 1px;
+    font-weight: 380;
+}
+p{
+    color: #817e7e;
+}
+/*---MAIN NAV---*/
+.navbar-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+.navbar-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.navbar-nav li a:link,
+.navbar-nav li a:visited{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+}
+.navbar-nav li a:hover,
+.navbar-nav li a:active{
+    border-bottom: 2px solid #F8A22F;
+    color: #F8A22F;
+    background-color: transparent;
+}
+
+
+/*-----------------------------------*/
+/* CART SECTION */
+/*-----------------------------------*/
+
+.cart-section{
+    background-image: linear-gradient(rgba(5, 2, 56, 0.8),rgba(5, 2, 56, 0.8)),
+    url(https://images.unsplash.com/photo-1542834369-f10ebf06d3e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+    height: 600px;    
+}
+.shopping-item{
+    margin-top:80px;
+}
+.item-section,
+.checkout-section{
+    border:2px solid #fff;
+    height: 500px;
+    background-color: #fff;
+    margin: 5px;
+    width: 30%;
+}
+.button-section{
+    text-align: center;
+    padding-top: 200px;
+    padding-left: 20px;
+    padding-right:20px;
+}
+.add-item{
+    padding-bottom: 20px;
+}
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #fff;
+    background-color: #b15c12;
+}
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #cf6d17;
+    color: #F8A22F;
+    background-color: transparent;
+}
+h2{
+    color: #817e7e;
+    text-align: center;
+}
+.fa-angle-double-right{
+    padding-left: 10px;
+}
+.fa-angle-double-left{
+    padding-right: 10px;
+}
+#item-section-list, #checkout-section-list{
+    color: #000;
+    cursor: pointer;
+    display: block;
+    padding: 0px;
+}
+#item-section-list div, #checkout-section-list div{
+    padding: 12px;
+}
+#checkout-section-list div{
+    text-align: left;
+}
+#item-section-list div:hover, #checkout-section-list div:hover{
+    background-color: #dddddd;
+}
+

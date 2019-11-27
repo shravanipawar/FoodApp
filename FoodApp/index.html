@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Delivery App</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">
+                        <h3><a id="brand-1">Food</a><a id="brand-2">.logo</a></h3>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#ourfood">Our Food</a></li>
+                            <li><a href="#plans">plans</a></li>
+                            <li><a class="btn btn-full" href="#">contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+        <div class="hero-text-box">
+            <h1>Have no time<br>to prepare <span>food</span>?</h1>
+            <p>Choose one of our plans, enter delivery time<br>and enjoy delicious food without leaving your home!</p>  
+            <a class="btn btn-full" href="#">Order Now</a>         
+        </div>
+
+    </header>
+    <section class="cart-section">
+        <div class="container">
+            <div class="row shopping-item">
+                <div class="col-md-4 item-section" id="item-section-list">
+                    <h2>Available options</h2>
+                </div>
+                <div class="col-md-4 button-section">
+                    <div class="add-item">
+                        <a class="btn btn-ghost" id="add-to-cart">Add to cart<i class="fa fa-angle-double-right"></i></a>
+                        
+                    </div>
+                    <div class="remove-item">
+                        <a class="btn btn-ghost" id="remove-from-cart"><i class="fa fa-angle-double-left"></i>Remove from cart</a>
+                    </div>
+                </div>
+                <div class="col-md-4 checkout-section" id="checkout-section-list">
+                    <h2>Your cart is empty</h2>
+                    <p>select an item and click "Add to cart"</p>
+                </div>
+            </div>
+        </div>
+    </section>            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var original = [
+                 'Pizza',
+                 'Burger',
+                 'Chicken pasta',
+                 'Grilled sandwich',
+                 'cheese sandwich',
+                 'veg pasta',
+        ];
+        var sourceItems = original
+        var destItems = []
+        var selectedItem = '';
+        $(document).ready(function(){
+            sourceItems.map(function(item, index){
+                $('#item-section-list').append(
+                   `<div data-item='${index}' class='list-item'>${item}</div>` 
+                )
+            })
+            $('.list-item').click(function(e){
+                selectedItem = $(e.target).data('item');
+            })
+
+            $("#remove-from-cart").click(function(){
+                var source = sourceItems;
+                var dest = [];
+
+                destItems.map(function(item, index){
+                    if(index === selectedItem){
+                        dest.push(item)
+                    }else{
+                        source.push(item)
+                    }
+                })
+            })
+
+            $("#add-to-cart").click(function(){
+                var source = [];
+                var dest = destItems;
+                sourceItems.map(function(item, index){
+                    if(index === selectedItem){
+                        dest.push(item)
+                    }else{
+                        source.push(item)
+                    }
+                })
+                    $('#item-section-list').empty();
+                    source.map(function(item, index){
+                        $('#item-section-list').append(
+                            `<div data-item='${index}' class='list-item'>${item}</div>` 
+                        )
+                    })
+                    $('#checkout-section-list').empty();
+                    dest.map(function(item, index){
+                        $('#checkout-section-list').append(
+                            `<div data-item='${index}' class='list-item'>${item}</div>` 
+                        )
+                    })
+                    $('.list-item').click(function(e){
+                        selectedItem = $(e.target).data('item');
+                    })
+                sourceItems= source
+                selectedItem=""
+            })
+        })
+    </script>
+</body>
+</html>
