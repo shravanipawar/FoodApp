@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Delivery App</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        /*-----------------------------------*/
+/* BASIC SETUP*/
+/*-----------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html,
+body{
+    background-color: #fff;
+    font-family: 'Lato','Arial',sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    
+}
+/*-----HEADINGS-----*/
+h1{
+    margin-top: 0;  
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 45px;
+    word-spacing:4px;
+    letter-spacing: 1px;
+    font-weight: 380;
+}
+
+h3{
+    font-weight:bold;
+    margin-top:60px;
+    text-transform: uppercase;
+}
+.navbar-brand{
+    padding: unset;
+}
+#brand-1{
+    color: #000;
+}
+#brand-2{
+    color: #F8A22F;
+}
+
+/*-----LINKS-------*/
+a:link,
+a:visited{
+    color: #888;
+    text-decoration: none;
+    padding-bottom: 1px;
+    transition: color 0.2s;
+}
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent; 
+}
+/*-----BUTTONS-----*/
+
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s,border 0.2s,color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #F8A22F;
+    border: 1px solid #F8A22F;
+    color: #fff;
+    margin-right: 15px;
+}
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #cf6d17;
+    color: #fff;
+}
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]{
+    border: 1px solid #cf6d17;
+}
+/*-----------------------------------*/
+/* HEADER*/
+/*-----------------------------------*/
+header{
+    background-color: rgba(243, 220, 220, 0.993);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;    
+}
+.hero-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+span{
+    color: #F8A22F;
+}
+h1{
+    font-size: 45px;
+    word-spacing:4px;
+    letter-spacing: 1px;
+    font-weight: 380;
+}
+p{
+    color: #817e7e;
+}
+/*---MAIN NAV---*/
+.navbar-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+.navbar-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.navbar-nav li a:link,
+.navbar-nav li a:visited{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+}
+.navbar-nav li a:hover,
+.navbar-nav li a:active{
+    border-bottom: 2px solid #F8A22F;
+    color: #F8A22F;
+    background-color: transparent;
+}
+
+
+/*-----------------------------------*/
+/* CART SECTION */
+/*-----------------------------------*/
+
+.cart-section{
+    background-image: linear-gradient(rgba(5, 2, 56, 0.8),rgba(5, 2, 56, 0.8)),
+    url(https://images.unsplash.com/photo-1542834369-f10ebf06d3e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+    height: 600px;    
+}
+.shopping-item{
+    margin-top:80px;
+}
+.item-section,
+.checkout-section{
+    border:2px solid #fff;
+    height: 500px;
+    background-color: #fff;
+    margin: 5px;
+    width: 30%;
+}
+.button-section{
+    text-align: center;
+    padding-top: 200px;
+    padding-left: 20px;
+    padding-right:20px;
+}
+.add-item{
+    padding-bottom: 20px;
+}
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #fff;
+    background-color: #b15c12;
+}
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #cf6d17;
+    color: #F8A22F;
+    background-color: transparent;
+}
+h2{
+    color: #817e7e;
+    text-align: center;
+}
+.fa-angle-double-right{
+    padding-left: 10px;
+}
+.fa-angle-double-left{
+    padding-right: 10px;
+}
+#item-section-list, #checkout-section-list{
+    color: #000;
+    cursor: pointer;
+    display: block;
+    padding: 0px;
+}
+#item-section-list div, #checkout-section-list div{
+    padding: 12px;
+}
+#checkout-section-list div{
+    text-align: left;
+}
+#item-section-list div:hover, #checkout-section-list div:hover{
+    background-color: #dddddd;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">
+                        <h3><a id="brand-1">Food</a><a id="brand-2">.logo</a></h3>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#ourfood">Our Food</a></li>
+                            <li><a href="#plans">plans</a></li>
+                            <li><a class="btn btn-full" href="#">contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+        <div class="hero-text-box">
+            <h1>Have no time<br>to prepare <span>food</span>?</h1>
+            <p>Choose one of our plans, enter delivery time<br>and enjoy delicious food without leaving your home!</p>  
+            <a class="btn btn-full" href="#">Order Now</a>         
+        </div>
+
+    </header>
+    <section class="cart-section">
+        <div class="container">
+            <div class="row shopping-item">
+                <div class="col-md-4 item-section" id="item-section-list">
+                    <h2>Available options</h2>
+                </div>
+                <div class="col-md-4 button-section">
+                    <div class="add-item">
+                        <a class="btn btn-ghost" id="add-to-cart">Add to cart<i class="fa fa-angle-double-right"></i></a>
+                        
+                    </div>
+                    <div class="remove-item">
+                        <a class="btn btn-ghost" id="remove-from-cart"><i class="fa fa-angle-double-left"></i>Remove from cart</a>
+                    </div>
+                </div>
+                <div class="col-md-4 checkout-section" id="checkout-section-list">
+                    <h2>Your cart is empty</h2>
+                    <p>select an item and click "Add to cart"</p>
+                </div>
+            </div>
+        </div>
+    </section>            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var original = [
+                 'Pizza',
+                 'Burger',
+                 'Chicken pasta',
+                 'Grilled sandwich',
+                 'cheese sandwich',
+                 'veg pasta',
+        ];
+        var sourceItems = original
+        var destItems = []
+        var selectedItem = '';
+        $(document).ready(function(){
+            sourceItems.map(function(item, index){
+                $('#item-section-list').append(
+                   `<div data-item='${index}' class='list-item'>${item}</div>` 
+                )
+            })
+            $('.list-item').click(function(e){
+                selectedItem = $(e.target).data('item');
+            })
+
+            $("#remove-from-cart").click(function(){
+                var source = sourceItems;
+                var dest = [];
+
+                destItems.map(function(item, index){
+                    if(index === selectedItem){
+                        dest.push(item)
+                    }else{
+                        source.push(item)
+                    }
+                })
+            })
+
+            $("#add-to-cart").click(function(){
+                var source = [];
+                var dest = destItems;
+                sourceItems.map(function(item, index){
+                    if(index === selectedItem){
+                        dest.push(item)
+                    }else{
+                        source.push(item)
+                    }
+                })
+                    $('#item-section-list').empty();
+                    source.map(function(item, index){
+                        $('#item-section-list').append(
+                            `<div data-item='${index}' class='list-item'>${item}</div>` 
+                        )
+                    })
+                    $('#checkout-section-list').empty();
+                    dest.map(function(item, index){
+                        $('#checkout-section-list').append(
+                            `<div data-item='${index}' class='list-item'>${item}</div>` 
+                        )
+                    })
+                    $('.list-item').click(function(e){
+                        selectedItem = $(e.target).data('item');
+                    })
+                sourceItems= source
+                selectedItem=""
+            })
+        })
+    </script>
+</body>
+</html>
